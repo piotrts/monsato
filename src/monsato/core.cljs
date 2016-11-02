@@ -22,7 +22,7 @@
 
   (observe! [_ node afn mo-opts]
     (set! nfns (assoc nfns node afn))
-    (.observe mo node (clj->js default-mutation-observer-opts)))
+    (.observe mo node (clj->js mo-opts)))
 
   (neglect! [_]
     (set! nfns {})
