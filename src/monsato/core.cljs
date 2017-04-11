@@ -1,7 +1,6 @@
 (ns monsato.core
-  (:require [cljs.core.async :refer [put! <!]]
-            [clojure.core.async.impl.channels :refer [ManyToManyChannel]]
-            [goog.dom :as dom]))
+  (:require [cljs.core.async :refer [put!]]
+            [clojure.core.async.impl.channels :refer [ManyToManyChannel]]))
 
 (def ^:private default-mutation-observer-opts
   {:attributes true
