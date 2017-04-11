@@ -18,13 +18,13 @@ Note as Monsato is in alpha stage right now, you have to compile it yourself. So
 
 ```clojure
 (require '[monsato.core :as m]
-         '[goog.dom :as dom])
+         '[goog.dom :as gdom])
 
 (def obs (m/observer))
 
 (m/observe!
   obs
-  (dom/getElement "watchme")
+  (gdom/getElement "watchme")
   (fn [mr] (js/console.log mr)))
   ```
 `observe!` also accepts a core.async channel as its last parameter:
@@ -35,5 +35,5 @@ Note as Monsato is in alpha stage right now, you have to compile it yourself. So
   (go-loop []
     (js/console.log (<! ch))
     (recur))
-  (m/observe! obs (dom/getElement "watchme") ch))
+  (m/observe! obs (gdom/getElement "watchme") ch))
 ```
