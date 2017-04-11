@@ -38,7 +38,6 @@
     (set! (.-mo obs)
           (js/MutationObserver.
             (fn [ms _]
-              ;; FIXME stop when node is found
               (doseq [mr ms]
                 (when-let [afn (or (get (.-nfns obs) (.-target mr))
                                    (get (.-nfns obs) (.. mr -target -parentNode)))]
