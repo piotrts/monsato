@@ -2,7 +2,7 @@
 
 **A lightweight MutationObserver wrapper for ClojureScript**
 
-Work in progress. Current version: 0.1.0.
+Work in progress. Current version: 0.1.0-SNAPSHOT.
 
 ## Installation
 
@@ -11,8 +11,6 @@ Add the following dependency to your `project.clj`:
 ```clojure
 [monsato "0.1.0-SNAPSHOT"]
 ```
-
-Note as Monsato is in alpha stage right now, you have to compile it yourself. Sorry.
 
 ## Example usage
 
