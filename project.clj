@@ -1,4 +1,4 @@
-(defproject monsato "0.1.0"
+(defproject monsato "0.1.1"
   :description "A lightweight MutationObserver wrapper for ClojureScript"
   :url "http://github.com/piotrts/monsato"
   :license {:name "Eclipse Public License"
