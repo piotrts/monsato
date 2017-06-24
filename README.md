@@ -9,7 +9,7 @@ Work in progress. Current version: 0.1.0.
 Add the following dependency to your `project.clj`:
 
 ```clojure
-[monsato "0.1.0"]
+[monsato "0.1.1"]
 ```
 
 ## Example usage
