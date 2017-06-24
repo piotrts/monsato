@@ -20,18 +20,15 @@ Add the following dependency to your `project.clj`:
 
 (def obs (m/observer))
 
-(m/observe!
-  obs
-  (gdom/getElement "watchme")
-  (fn [mr] (js/console.log mr)))
+(m/observe obs (gdom/getElement "watchme") #(prn %))
   ```
-`observe!` also accepts a core.async channel as its last parameter:
+`observe` also accepts a core.async channel as its last parameter:
 
 ```clojure
 (let [obs (m/observer)
       ch (chan)]
   (go-loop []
-    (js/console.log (<! ch))
+    (prn (<! ch))
     (recur))
-  (m/observe! obs (gdom/getElement "watchme") ch))
+  (m/observe obs (gdom/getElement "watchme") ch))
 ```
