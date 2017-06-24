@@ -11,19 +11,19 @@
    :subtree true})
 
 (defprotocol IObservable
-  (observe! [this node afn] [this node afn mo-opts])
-  (neglect! [this node]))
+  (observe [this node afn] [this node afn mo-opts])
+  (neglect [this node]))
 
 (deftype Observer [^:mutable mo ^:mutable nfns]
   IObservable
-  (observe! [_ node afn]
-    (observe! _ node afn default-mutation-observer-opts))
+  (observe [_ node afn]
+    (observe _ node afn default-mutation-observer-opts))
 
-  (observe! [_ node afn mo-opts]
+  (observe [_ node afn mo-opts]
     (set! nfns (assoc nfns node afn))
     (.observe mo node (clj->js mo-opts)))
 
-  (neglect! [_ node]
+  (neglect [_ node]
     (set! nfns (dissoc nfns node))))
 
 (defn observer []
