@@ -27,7 +27,7 @@
     (set! nfns (dissoc nfns node))))
 
 (defn observer []
-  (let [obs (->Observer nil {})]
+  (let [obs (Observer. nil {})]
     (set! (.-mo obs)
           (js/MutationObserver.
             (fn [ms _]
