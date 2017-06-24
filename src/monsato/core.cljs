@@ -28,9 +28,7 @@
     (.disconnect mo))
 
   (neglect! [_ node]
-    (set! nfns (dissoc nfns node))
-    (when-not (seq nfns)
-      (.disconnect mo))))
+    (set! nfns (dissoc nfns node))))
 
 (defn observer []
   (let [obs (->Observer nil {})]
